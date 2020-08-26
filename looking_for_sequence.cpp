@@ -4,7 +4,7 @@ using namespace std;
 bool look_for_3B(string text , int i){
 	bool found = false;
 	for(int k= 0 ; k < 3;k++){
-		if islower(text[k])
+		if (islower(text[k])==true)
 			found = true;
 	}
 	if(found == false)
@@ -14,13 +14,14 @@ bool look_for_3B(string text , int i){
 	
 }
 int main(){
-string text = "";
+string text = "sBBBsBBBsKKKKKKKKK";
+cout<<text<<endl;
 for(int i = 0 ; i < text.length();i++){
-	if(islower(text[i]) == true){
+	if(islower(text[i])){
 		if(look_for_3B(text , i+1) == true){
-			if(islower(text[i+4] == true){
+			if(islower(text[i+4])){
 				if(look_for_3B(text,i+5)== true){
-					if(islower(text[i+8])== true){
+					if(islower(text[i+8])){
 						for(int j = i ; j < 8;j++){
 							cout<<text[j];
 						}
@@ -30,7 +31,6 @@ for(int i = 0 ; i < text.length();i++){
 		}
 	
 }
-	
-	return 0;
 }
+return 0;
 }
