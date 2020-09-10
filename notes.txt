@@ -1,0 +1,54 @@
+pyperclip ---> molto utile
+
+lines = text.split("\n") crea una lista in cui ogni riga (
+separata dalle altre da una new line) è un elemento.
+
+
+rjust(10) ---> u want to fit what u are printing in a line made of 10 character in total
+
+REGULAR expressions----> phone = re.compile(r 'pattern')---> creates an object that has a
+                         search method ---> mo = phone.search()----> creates another object that
+                         has the .group() method --->print(mo.group())--> get phone number
+                        -REGEX object and MATCH object
+                        -? for optional pattern
+                        * ----> match 0 or more
+                        +-----> match 1 or more
+                        {3,5} ---> repeat a min of 3 times , and a max of 5 times
+                        - | or
+                        - {}----> greedy braces , they match the longest possible sequence
+                        - {}? -----> non greedy braces , they match the shortest possible sequence
+                        - check table : shorthand codes for Character class p 173
+                        - ^ = search for something that begins with
+                        - \d$ = search for something that ends with any digit
+                        - (.*) = match anything exept newlines, to match EVERYTHING u must use
+                                 ('.*', re.DOTALL)
+                        - p177 , review of all symbols
+                        -IN GENERAL ---> regex = re.compile('something')
+                        - regex = re.compile(r'Agent' \w+)
+                          regex.sub('CENSORED' , 'Agent alice gave the secret documents to Agent Bob')
+                          ---> CENSORED gave the secret document to CENSOREd
+                          ---> SUB is really usefull
+
+INPUT VALIDATION------>pyinputplus module to have more imput validation , instead
+                       of just using name = input(). With this module u can even
+                        give time limtis.
+
+i want to write bubble sort in python. It shouldt't be so diff.
+
+READING AND WRITING FILES -----> use os.chdir to change working directory
+                                 use os.makedirs(path) to create a folder
+                                 use p = Path(path) then p.glob("*") to create a glob object. U can use it to list every element in the given path. Usefull for haking
+                                        list(p.glob("*.txt")) to get all the txt files (where might be stored usernames and passowrds)
+                                 when u open files , u have to specify the path if the file is not in the
+                                 current working directory
+                                - open() takes also path objects
+                                -open(filename , "a" ) = append mode , it will not overwrite the existing
+                                        content
+                                -shelve module to save variables
+                                -import shelve
+                                    shelfFile = shelve.open('mydata')
+                                    print(list(shelfFile.values()))
+                                    shelfFile.close()
+                                -use pprint for more nice printing with key associated with value.
+                                - must start a project to work a little bit with reading / writing files , and
+                                  working with changing directories
