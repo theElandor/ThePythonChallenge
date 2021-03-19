@@ -1,0 +1,48 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+const int n = 10;
+void d(int arr[])
+{
+    for(int i = 0 ; i < n ; i++)
+        cout<<arr[i]<<" ";
+    cout<<endl;
+}
+void swap(int &a , int &b)
+{
+    int temp;
+    temp = a;
+    a = b ; 
+    b = temp;
+}
+int minim(int arr[], int k)
+{
+    int min = k;    
+    for(int i = k+1 ; i < n ; i++)
+    {
+        if(arr[i] < arr[min])
+            min = i;
+    }
+    return min;
+}
+void selection(int arr[])
+{
+    for(int i = 0 ; i < n ;i++)
+    {
+        int j = minim(arr , i);
+        swap(arr[i] , arr[j]);
+    }
+}
+int main()
+{
+    int arr[n];
+    srand(time(NULL));
+    for(int i = 0 ; i < n ; i++)
+    {
+        arr[i] = rand()%10;
+    }
+    d(arr);
+    selection(arr);
+    d(arr);
+    return 0;
+}
